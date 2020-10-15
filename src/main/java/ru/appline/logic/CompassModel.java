@@ -21,6 +21,7 @@ public class CompassModel {
 
     }
 
+    //Парсинг границ
     public void setCompass(Map<String, String> degrees) {
 
         int lBorder;
@@ -109,10 +110,13 @@ public class CompassModel {
         boolean isSideFound = false;
         String side = "Unknown";
 
+        //Проверка на правильность градуса
         if (degree < 360 && degree >= 0) {
 
+            //Проход по всем границам
             for (Map<String, Integer> border : compass.getBorders()) {
 
+                //Проверка на нахождение в границах
                 if (degree >= border.get("lBorder") && degree <= border.get("rBorder")) {
 
                     isSideFound = true;
@@ -122,6 +126,7 @@ public class CompassModel {
 
             }
 
+            //Если не подошёл ни один из вариантов, то правильным будет север.
             if (!isSideFound) {
 
                 side = "North";

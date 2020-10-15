@@ -20,6 +20,7 @@ public class Controller {
 
         JsonObject message = new JsonObject();
 
+        //Проверка что на входе у нас 4 или 8 сторон.
         if (json.size() == 4 || json.size() == 8) {
 
             Map<String, String> degrees = new HashMap<>();
@@ -29,6 +30,7 @@ public class Controller {
             degrees.put("South", json.get("South").getAsString());
             degrees.put("West", json.get("West").getAsString());
 
+            //Проверка на расширенный компас
             if (json.has("North-East")) {
 
                 degrees.put("North-East", json.get("North-East").getAsString());

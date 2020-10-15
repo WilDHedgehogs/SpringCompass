@@ -32,6 +32,7 @@ public class Compass {
         borders = new ArrayList<>();
         sides = new HashMap<>();
 
+        //Заполнение границ и наименования сторон
         borders.add(north);
         sides.put(north.get("lBorder"), "North");
         borders.add(east);
